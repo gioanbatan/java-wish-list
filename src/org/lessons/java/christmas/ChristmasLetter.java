@@ -13,7 +13,8 @@ public class ChristmasLetter {
 
     // Constructors
     public ChristmasLetter(String name, String address, List<String> wishList) {
-
+        this.name = name;
+        this.address = address;
     }
 
     // Methods
