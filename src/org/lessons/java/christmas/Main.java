@@ -27,5 +27,15 @@ public class Main {
         // Print list
         Collections.sort(wishList);
         System.out.println(wishList);
+
+        // Test send a letter
+        // New instance of ChristmasLetter
+        ChristmasLetter letter = new ChristmasLetter("Prova", "Sgurgolo, 34", wishList);
+        try {
+        // Send letter
+        letter.send();
+        } catch (LetterException) {
+            System.out.println("");
+        }
     }
 }
