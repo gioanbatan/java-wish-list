@@ -13,6 +13,13 @@ public class Main {
         // User input
         Scanner scan = new Scanner(System.in);
 
+        // User name and address
+        System.out.print("Qual è il tuo nome? ");
+        String userName = scan.nextLine();
+
+        System.out.print("Qual è il tuo indirizzo? ");
+        String userAddress = scan.nextLine();
+
         Boolean moreInput = true;
         while (moreInput) {
             System.out.print("Esprimi un desiderio (digita x per terminare): ");
@@ -30,12 +37,12 @@ public class Main {
 
         // Test send a letter
         // New instance of ChristmasLetter
-        ChristmasLetter letter = new ChristmasLetter("Prova", "Sgurgolo, 34", wishList);
+        ChristmasLetter letter = new ChristmasLetter(userName, userAddress, wishList);
         try {
-        // Send letter
-        letter.send();
-        } catch (LetterException) {
-            System.out.println("");
+            // Send letter
+            letter.send();
+        } catch (LetterException e) {
+            System.out.println(e);
         }
     }
 }

@@ -35,7 +35,7 @@ public class ChristmasLetter {
     }
 
     // Custom methods
-    public void send() {
+    public void send() throws LetterException {
         // WishList size control
         if (this.wishList.size() > 5) {
             throw new LetterException("I desideri devono essere massimo 5!");
@@ -44,7 +44,7 @@ public class ChristmasLetter {
         // Random boolean for good/bad
         Random rnd = new Random();
         if (rnd.nextBoolean()) {
-            throw new RuntimeException();
+            throw new LetterException("Sei stato troppo cattivo, niente regali");
         }
 
         // Display send success
